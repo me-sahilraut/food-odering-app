@@ -5,7 +5,7 @@ import useOnlineStatus from "../utils/useOnlineStatus";
 import { useSelector, useDispatch } from "react-redux";
 import Sidebar from "./Sidebar";
 import { toggleMenu } from "../utils/CartSlice";
-
+import { FaShoppingCart } from "react-icons/fa";
 
 
 const Header = () => {
@@ -62,7 +62,7 @@ const Header = () => {
             <Link to="/grocery" className="hover:underline hover:underline-offset-8 cursor-pointer">Grocery</Link>
           </li>
           <li className="mx-4 font-bold text-xl">
-            <Link to="/cart" className="hover:underline hover:underline-offset-8 cursor-pointer">Cart - ({cartItems.length} items)</Link>
+            <Link to="/cart" className="hover:underline hover:underline-offset-8 cursor-pointer flex"><FaShoppingCart className="w-[1.5rem] h-[1.5rem] my-auto" />- ({cartItems.length} items)</Link>
           </li>
           <button
             className="login"
@@ -81,7 +81,7 @@ const Header = () => {
     </div>
   ) : <div className="flex justify-between  shadow-lg bg-green-50">
     <div className="logo-container">
-      <img className="w-56" src={LOGO_URL} />
+      <img className="w-26 h-27" src={LOGO_URL} />
     </div>
     <div className="flex items-center">
 

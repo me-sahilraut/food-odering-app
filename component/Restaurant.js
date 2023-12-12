@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import UserContext from "../utils/UserContext";
 import { CDN_URL } from "../utils/constants";
-
+import { FcRating } from "react-icons/fc";
 
 
 const Restaurant = (props) => {
@@ -13,20 +13,18 @@ const Restaurant = (props) => {
         cuisines,
         avgRating,
         costForTwo,
-        deliveryTime,
+        sla,
         cloudinaryImageId,
     } = resData?.info;
     return (
-        <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200">
-            <img className="food-image" src={CDN_URL + cloudinaryImageId} />
-            <h4 className="text-lg font-bold"> {name}</h4>
-            <h4>{cuisines.join(", ")}</h4>
-            <h4>{avgRating}</h4>
-            <h4>{costForTwo / 100}For Two</h4>
-            <h4>{deliveryTime}minutes</h4>
-            <h4>
-                {user.name} - {user.email}
-            </h4>
+        <div className="m-4 p-4 w-[300px] rounded-2xl bg-gray-100 hover:bg-gray-200 shadow-xl h-[26rem] space-y-1">
+            <img className="w-full object-cover h-[200px]" src={CDN_URL + cloudinaryImageId} />
+            <h4 className="text-lg font-bold uppercase"> {name}</h4>
+            <h4 className="text-ellipsis font-light whitespace-nowrap overflow-hidden">{cuisines.join(", ")}</h4>
+            <h4 className="flex space-x-2 "><FcRating className="w-[1rem] h-[2rem]" /><span className="my-auto font-bold">{avgRating}</span></h4>
+            <h4>{costForTwo}</h4>
+            <h4 >{sla.deliveryTime} minutes</h4>
+
         </div>
     );
 };

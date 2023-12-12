@@ -1,10 +1,14 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
+import { RiArrowDropDownLine } from "react-icons/ri";
 
-const RestaurantCategory = ({ data, showItems, setShowIndex, dummy }) => {
+const RestaurantCategory = ({ data, showItems, setShowIndex, hideItems, dummy }) => {
+
+
   const handleClick = () => {
-    setShowIndex();
+    showItems ? hideItems() : setShowIndex();
   };
+
   return (
     <div>
       {/* Header */}
@@ -16,7 +20,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex, dummy }) => {
           <span className="font-bold text-lg">
             {data.title} ({data.itemCards.length})
           </span>
-          <span>⬇️</span>
+          <span><RiArrowDropDownLine className="w-[2rem] h-[3rem]" /></span>
         </div>
 
         {showItems && <ItemList items={data.itemCards} dummy={dummy} />}

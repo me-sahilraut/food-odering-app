@@ -18,7 +18,7 @@ const ItemList = ({ items, dummy }) => {
           className="p-2 m-2 border-gray-200 border-b-2 text-left flex justify-between"
         >
           <div className="w-9/12">
-            <div className="py-2">
+            <div className="py-2 text-xl font-bold uppercase text-[#003459]">
               <span>{item.card.info.name}</span>
               <span>
                 - ₹
@@ -27,7 +27,7 @@ const ItemList = ({ items, dummy }) => {
                   : item.card.info.defaultPrice / 100}
               </span>
             </div>
-            <p className="text-xs">{item.card.info.description}</p>
+            <p className="text-sm font-light">{item.card.info.description}</p>
           </div>
           <div className="w-3/12 p-4">
             <div className="absolute">
@@ -38,7 +38,7 @@ const ItemList = ({ items, dummy }) => {
                 Add +
               </button>
             </div>
-            <img src={CDN_URL + item.card.info.imageId} className="w-full" />
+            <img src={CDN_URL + item.card.info.imageId} className="w-full h-[8rem]" />
             {console.log(item)}
           </div>
         </div>

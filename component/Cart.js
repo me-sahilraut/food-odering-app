@@ -15,14 +15,14 @@ const Cart = () => {
 
   return (
     <div>
-      <h1 className="font-bold text-lg p-5">Cart {getCartItems.length}</h1>
+      {/* <h1 className="font-bold text-lg p-5">Cart {getCartItems.length}</h1>
       <button
         className="bg-green-200 border border-black p-2 m-2"
         onClick={() => handelClearCart()}
       >
         clearItem
-      </button>
-      <div className="flex flex-wrap">
+      </button> */}
+      <div className="flex flex-wrap gap-4 justify-center m-auto">
         {getCartItems.map((item) => (
           <FoodItems key={item?.card?.info?.id} {...item?.card?.info} />
         ))}

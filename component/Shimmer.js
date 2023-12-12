@@ -1,15 +1,21 @@
-const Shimmer = () => (
-  <div className="bg-gray-400 w-100px h-100px" data-testid="shimmer">
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-    <div className="shimmer"></div>
-  </div>
-);
+const Shimmer = () => {
+  return (
+    <div
+      className="shimmer-container w-[70%] mx-auto max-w-screen-xl mt-4 grid gap-4"
+      style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 30%))" }}
+    >
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+      <div className="shimmer-card w-[100%] bg-zinc-200 h-[250px] overflow-hidden rounded-lg"></div>
+
+    </div>
+  )
+};
 
 export default Shimmer;

@@ -39,10 +39,9 @@ const Body = ({ user }) => {
         ?.restaurants
     );
 
-    // console.log(
-    //   jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-    //     ?.restaurants
-    // );
+    console.log(
+      jsonData?.data
+    );
   };
 
   // console.log(listOfRestaurants);
@@ -54,10 +53,10 @@ const Body = ({ user }) => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter flex">
+    <div className="body mx-[8.5rem]">
+      <div className="filter flex ">
         <div className="search m-8 p-4">
-          <div className="">
+          <div className="ml-[4.75rem]">
             <input
               data-testid="search-input"
               className="w-48 rounded-l-full rounded-r  border border-gray-400  p-2 bg-pink-100 "
@@ -79,33 +78,33 @@ const Body = ({ user }) => {
               Search
             </button>
           </div>
+          {/* 
+          <button
+            className="btn"
+            onClick={() => {
+              const filterList = listOfRestaurants.filter(
+                (res) => res.data.avgRating > 4
+              );
+              setlistOfRestaurants(filterList);
+            }}
+          >
+            Top Rating Restaurant
+          </button>
 
-          {/* <button
-          className="btn"
-          onClick={() => {
-            const filterList = listOfRestaurants.filter(
-              (res) => res.data.avgRating > 4
-            );
-            setlistOfRestaurants(filterList);
-          }}
-        >
-          Top Rating Restaurant
-        </button>
-
-        <button
-          className="btn"
-          onClick={() => {
-            const filterList = listOfRestaurants.filter(
-              (res) => res.data.avgRating < 4
-            );
-            setlistOfRestaurants(filterList);
-          }}
-        >
-          Low Rating Restaurant
-        </button> */}
+          <button
+            className="btn"
+            onClick={() => {
+              const filterList = listOfRestaurants.filter(
+                (res) => res.data.avgRating < 4
+              );
+              setlistOfRestaurants(filterList);
+            }}
+          >
+            Low Rating Restaurant
+          </button> */}
 
           <div
-            className="flex flex-wrap gap-4 justify-center m-auto "
+            className="flex flex-wrap gap-4 justify-center  "
             data-testid="res-list"
           >
             {/* {console.log(filterRestaurant[0].info.id + " hello ")} */}
