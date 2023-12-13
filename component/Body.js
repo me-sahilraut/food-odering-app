@@ -3,12 +3,21 @@ import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import Restaurant from "./Restaurant";
-
+import Aos from 'aos';
+import 'aos/dist/aos.css';
 
 const Body = ({ user }) => {
   const [listOfRestaurants, setlistOfRestaurants] = useState([]);
   const [filterRestaurant, setfilterRestaurant] = useState([]);
   const [searchText, setsearchText] = useState([]);
+
+  useEffect(() => {
+    Aos.init({
+      delay: 200,
+      duration: 1200,
+      once: false,
+    })
+  }, []);
 
   useEffect(() => {
     fetchData();
@@ -53,10 +62,12 @@ const Body = ({ user }) => {
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body mx-[8.5rem]">
-      <div className="filter flex ">
-        <div className="search m-8 p-4">
-          <div className="ml-[4.75rem]">
+    <div className="body" data-aos="fade">
+
+      <div className="filter flex mt-10">
+        <div className="search m-8 p-4 space-y-7">
+          <div className="ml-[10rem] space-y-5">
+            <h1 className="text-3xl font-bold">Top Restaurants In Nagpur</h1>
             <input
               data-testid="search-input"
               className="w-48 rounded-l-full rounded-r  border border-gray-400  p-2 bg-pink-100 "
@@ -104,7 +115,7 @@ const Body = ({ user }) => {
           </button> */}
 
           <div
-            className="flex flex-wrap gap-4 justify-center  "
+            className="flex flex-wrap  justify-center  mx-[8rem]  "
             data-testid="res-list"
           >
             {/* {console.log(filterRestaurant[0].info.id + " hello ")} */}

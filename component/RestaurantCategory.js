@@ -1,6 +1,9 @@
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
 import { RiArrowDropDownLine } from "react-icons/ri";
+
+
 
 const RestaurantCategory = ({ data, showItems, setShowIndex, hideItems, dummy }) => {
 
@@ -10,7 +13,7 @@ const RestaurantCategory = ({ data, showItems, setShowIndex, hideItems, dummy })
   };
 
   return (
-    <div>
+    <div >
       {/* Header */}
       <div className="w-6/12 mx-auto my-4 bg-gray-50 shadow-lg p-4">
         <div
